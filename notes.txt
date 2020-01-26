@@ -1,0 +1,93 @@
+TODO
+handle sound files and not just video files.
+Create new repo. Decide on name. Sticker, notes
+Have some sort of prettyprint for a transcription. It can start the line with hour:minute:seconds- the words that come for that e.g. 10 seconds. Then new line with next words.
+
+Build in test-example
+
+change video helper/sticker to butler
+
+Names:
+- bot
+- butler
+- memo butler
+- intention butler
+- analyze butler or something but more towards video
+- video/audio butler?
+- filmmaker butler
+- director butler
+- editor butler
+- editing butler
+
+Edit Butler
+Editorial Butler
+Editor Butler
+Editing Butler
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Webpage
+Features:
+- Install guide with videos/gifs
+  - Images to right. Can I skip the layout? Set up reusable code blocks
+  - Create changed theme to load? 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create youtube video.
+- Record real video
+  - Create transcript
+- Screen record workflow
+- Edit video together
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create forum post
+Make install instructions
+- Docker
+- open terminal
+- drag & drop folder to open that path
+- git, build docker
+- run program
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Would also work for podcasts
+
+Voice commands
+Debug commands - https://speechlogger.appspot.com/
+- Recording assistant. Video helper
+- Start/end clip
+- Add mark(s) *name*. Adds video
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Long term
+- Workflow Extension - plugin for final cut. Seems like you have to collaborate with apple? Mac OS desktop client could allow for drag and drop workflow at least.
+- Add full transcriptions?
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+App
+If I do an app it offers up a few possibilities. I can create a project within the app and from there create complicated tags that wont fit in a QR code - but they will be mapped to simple ints which do fit in QR - hopefully even miiini QR. Once the project is finilized you can export the mapping to the python program - json or maybe through a big QR code that you scan with webcam-ish?
+
+App should also have option of just saving tags, without putting them into a QR and sync to video.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Competitors
+Adobe Prelude
+Lumberjack system
+Movie Slate
+Keyflow pro
+Cut Notes
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pure post-processing options
+Dictating speech seems very important but already has a few big players
+Automatic tagging of video would be good. What tags to select?
+Automatically detect scene-repeats (duplicates) would be useful. What about scenes which are similar but not duplicates? Could give a draft that can be edited
+
+
+
+
+
