@@ -10,8 +10,7 @@ class SpeechRecognizer():
     self.commandword_bias = commandword_bias
     command_format = namedtuple('Command', 'command command_variant')
     self.commands = []
-    self.commands.append(command_format(SpeechCmd.wakeword, 'videohelper'))
-    self.commands.append(command_format(SpeechCmd.wakeword, 'video helper'))
+    self.commands.append(command_format(SpeechCmd.wakeword, 'butler'))
     self.commands.append(command_format(SpeechCmd.startclip, 'start clip'))
     self.commands.append(command_format(SpeechCmd.endclip, 'end clip'))
     self.commands.append(command_format(SpeechCmd.endclip, 'stop clip'))

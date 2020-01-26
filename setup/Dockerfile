@@ -1,6 +1,6 @@
 FROM python:3.7
 
-ENV user=sticker
+ENV user=butler
 RUN useradd --user-group --create-home --no-log-init --shell /bin/bash $user
 WORKDIR /home/$user
 

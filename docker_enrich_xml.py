@@ -23,7 +23,7 @@ def main():
   raw_args = ' '.join(sys.argv[1:])
   command = 'python enrich_xml.py --path_base=%s %s' % (host, raw_args)
 
-  docker_args = "docker run -it --rm --name stick -v /:%s:ro -v %s:/home/sticker sticker %s" % (
+  docker_args = "docker run -it --rm --name butler -v /:%s:ro -v %s:/home/butler butler %s" % (
     host, project_root, command)
 
   exit_code = subprocess.call(docker_args.split())

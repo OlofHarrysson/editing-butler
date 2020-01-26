@@ -6,7 +6,7 @@ Builds the docker image from the parent directory to be able to copy contents fr
 
 
 def main():
-  args = 'docker build -t sticker -f setup/Dockerfile .'
+  args = 'docker build -t butler -f setup/Dockerfile .'
   cwd = Path(__file__).parent.parent.absolute()
   subprocess.run(args.split(), cwd=cwd)
 
