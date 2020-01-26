@@ -26,7 +26,7 @@ class DevConfig(UserConfig):
     super().__init__()
 
     # The name of the google storage bucket
-    self.google_bucket_name = 'testytesty'
+    self.google_bucket_name = 'butler-bucket'
 
     # The credentials file to google cloud
     self.google_key = '.google_key.json'

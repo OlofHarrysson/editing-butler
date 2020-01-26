@@ -33,9 +33,6 @@ def check_connection_to_bucket(bucket_name, install_guide_path):
   except:
     raise ConnectionError("Couldn't connect to the internet")
 
-  client = storage.Client()
-  client.get_bucket(bucket_name)
-
   try:
     client = storage.Client()
     client.get_bucket(bucket_name)
