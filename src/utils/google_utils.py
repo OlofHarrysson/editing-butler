@@ -44,7 +44,7 @@ def check_connection_to_bucket(bucket_name, install_guide_path):
 
 def register_credentials(bucket_name, google_key):
   cred_file = meta_utils.get_project_root() / google_key
-  install_guide_path = 'https:TODO'
+  install_guide_path = meta_utils.install_url()
   err_msg = f"File '{cred_file}' didn't exist. It is needed to authenticate yourself towards Google. See the install guide '{install_guide_path}'"
   assert cred_file.exists(), err_msg
   os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(cred_file)

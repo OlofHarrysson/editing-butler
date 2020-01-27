@@ -24,3 +24,7 @@ def clear_outdir():
 
 def get_joke():
   return pyjokes.get_joke()
+
+
+def install_url():
+  return 'http://167.172.151.158/markdown/installation'

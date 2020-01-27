@@ -18,6 +18,9 @@ def main():
     meta_utils.clear_outdir()
 
   xml_path = Path(config.xml_file)
+  if xml_path.is_absolute():
+    xml_path = Path(config.path_base) / str(xml_path)[1:]
+
   recognizer = config.recognizer
 
   analyzed_metadatum = []

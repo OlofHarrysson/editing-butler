@@ -60,7 +60,7 @@ class DebugConfig(DevConfig):
   def __init__(self):
     super().__init__()
     self.xml_file = 'input_xml/sofa_event.fcpxml'  # TODO: Doesn't work with abs path & docker
-    self.send_to_finalcut = True
+    self.send_to_finalcut = False
     self.fake_data = True
     self.clear_outdir = True
     self.unique_cloud_file_id = ''

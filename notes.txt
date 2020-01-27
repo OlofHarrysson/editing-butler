@@ -1,29 +1,8 @@
 TODO
 handle sound files and not just video files.
-Create new repo. Decide on name. Sticker, notes
 Have some sort of prettyprint for a transcription. It can start the line with hour:minute:seconds- the words that come for that e.g. 10 seconds. Then new line with next words.
 
 Build in test-example
-
-change video helper/sticker to butler
-
-Names:
-- bot
-- butler
-- memo butler
-- intention butler
-- analyze butler or something but more towards video
-- video/audio butler?
-- filmmaker butler
-- director butler
-- editor butler
-- editing butler
-
-Edit Butler
-Editorial Butler
-Editor Butler
-Editing Butler
-
 
 
 
