@@ -7,9 +7,11 @@ from src.finalcut import edit_xml
 from src.utils import google_utils
 from src.utils import xml_utils
 from src.utils import meta_utils
+from src.utils import ffmpeg_utils
 
 
 def main():
+  ffmpeg_utils.assert_installed()
   joke = meta_utils.get_joke()
   print(f'Here is a programming joke while you wait ;)\n\n{joke}\n')
 

@@ -51,6 +51,7 @@ class GoogleSpeechRecognition(SpeechRecognizer):
     tmp_audio_file = f'/tmp/{unique_cloud_id}_{path.stem}.wav'
     cloud_path = Path(tmp_audio_file)
 
+    # Convert file to audio
     ffmpeg.input(path).output(tmp_audio_file).overwrite_output().run(
       quiet=True)
 

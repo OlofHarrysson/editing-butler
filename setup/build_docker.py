@@ -1,4 +1,4 @@
-from pathlib import Path
+import os
 import subprocess
 '''
 Builds the docker image from the parent directory to be able to copy contents from the parent directory into the image
@@ -7,8 +7,8 @@ Builds the docker image from the parent directory to be able to copy contents fr
 
 def main():
   args = 'docker build -t butler -f setup/Dockerfile .'
-  cwd = Path(__file__).parent.parent.absolute()
-  subprocess.run(args.split(), cwd=cwd)
+  project_root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+  subprocess.call(args.split(), cwd=project_root)
 
 
 if __name__ == '__main__':
