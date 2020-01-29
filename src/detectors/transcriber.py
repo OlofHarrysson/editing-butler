@@ -1,5 +1,5 @@
 from collections import namedtuple
-from src.commands import SpeechCommands
+from src.commands import SpeechCommands  # Needed for the eval
 
 
 class Transcriber():
@@ -34,6 +34,7 @@ class Transcriber():
 
     return formated_words
 
-  def print_text(self):
+  @property
+  def transcription(self):
     text = [w.text for w in self.words]
-    print(' '.join(text))
+    return ' '.join(text)

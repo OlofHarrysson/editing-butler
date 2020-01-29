@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+
+<fcpxml version="1.8">
+    <resources>
+        <asset id="r1" name="setup_test" uid="FCDE6FB538FB2DC673BE5669E7A62C3B" src="file:///Users/olof/git/editing-butler/assets/setup_test.mov" start="0s" duration="157290/44100s" hasVideo="1" format="r2" hasAudio="1" audioSources="1" audioChannels="1" audioRate="44100">
+            <bookmark>Ym9vawwDAAAAAAQQMAAAAJxbWjqq9rUDdg9bXMBR2kPqiw4qCbWjuTDv1BbbrhkmCAIAAAQAAAADAwAAABgAKAUAAAABAQAAVXNlcnMAAAAEAAAAAQEAAG9sb2YDAAAAAQEAAGdpdAAOAAAAAQEAAGVkaXRpbmctYnV0bGVyAAAGAAAAAQEAAGFzc2V0cwAADgAAAAEBAABzZXR1cF90ZXN0Lm1vdgAAGAAAAAEGAAAQAAAAIAAAACwAAAA4AAAAUAAAAGAAAAAIAAAABAMAAJ1TAAAAAAAACAAAAAQDAADhjgUAAAAAAAgAAAAEAwAA0NwLAAAAAAAIAAAABAMAACwAJQAAAAAACAAAAAQDAACOsScAAAAAAAgAAAAEAwAAiLEnAAAAAAAYAAAAAQYAAJgAAACoAAAAuAAAAMgAAADYAAAA6AAAAAgAAAAABAAAQcHxCCeyUB0YAAAAAQIAAAEAAAAAAAAADwAAAAAAAAAAAAAAAAAAAAgAAAAEAwAABAAAAAAAAAAEAAAAAwMAAPUBAAAIAAAAAQkAAGZpbGU6Ly8vDAAAAAEBAABNYWNpbnRvc2ggSEQIAAAABAMAAADgAePoAAAACAAAAAAEAABBwbsZK9pmpSQAAAABAQAANkFGQjRFRTAtQzY5RC00QjBGLUFFMUMtREUxMjYyOERCOTY0GAAAAAECAACBAAAAAQAAAO8TAAABAAAAAAAAAAAAAAABAAAAAQEAAC8AAAAAAAAAAQUAAMwAAAD+////AQAAAAAAAAAQAAAABBAAAHgAAAAAAAAABRAAAPgAAAAAAAAAEBAAACgBAAAAAAAAQBAAABgBAAAAAAAAAiAAAPQBAAAAAAAABSAAAGQBAAAAAAAAECAAAHQBAAAAAAAAESAAAKgBAAAAAAAAEiAAAIgBAAAAAAAAEyAAAJgBAAAAAAAAICAAANQBAAAAAAAAMCAAAAACAAAAAAAAAcAAAEgBAAAAAAAAEcAAACAAAAAAAAAAEsAAAFgBAAAAAAAAENAAAAQAAAAAAAAA</bookmark>
+        </asset>
+        <format id="r2" frameDuration="20/600s" width="1080" height="720" colorSpace="1-1-6"/>
+    </resources>
+    <library location="file:///Users/olof/Movies/split.fcpbundle/">
+        <event name="setup_test" uid="1C8FEF2F-B1B4-4003-AFD1-84AB4B29EEC5">
+            <asset-clip name="setup_test" ref="r1" duration="2140/600s" audioRole="dialogue" format="r2" tcFormat="NDF" modDate="2020-01-29 20:15:04 +0100"/>
+        </event>
+        <smart-collection name="Projects" match="all">
+            <match-clip rule="is" type="project"/>
+        </smart-collection>
+        <smart-collection name="All Video" match="any">
+            <match-media rule="is" type="videoOnly"/>
+            <match-media rule="is" type="videoWithAudio"/>
+        </smart-collection>
+        <smart-collection name="Audio Only" match="all">
+            <match-media rule="is" type="audioOnly"/>
+        </smart-collection>
+        <smart-collection name="Stills" match="all">
+            <match-media rule="is" type="stills"/>
+        </smart-collection>
+        <smart-collection name="Favorites" match="all">
+            <match-ratings value="favorites"/>
+        </smart-collection>
+    </library>
+</fcpxml>

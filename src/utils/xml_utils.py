@@ -1,11 +1,14 @@
 from lxml import etree
 from pathlib import Path
-import subprocess
 
 
 def read_xml(path):
   path = path.absolute()
   assert path.exists(), f"XML file '{path}' didn't exist"
+
+  err_msg = f"Expected a final cut pro xml-file (file that ends with .fcpxml) but recieved '{path}'"
+  assert path.suffix == '.fcpxml', err_msg
+
   tree = etree.parse(str(path))
   root = tree.getroot()
   return tree, root

@@ -19,6 +19,9 @@ class UserConfig():
     # Deletes the sound file from google storage after its use
     self.delete_cloud_file = True
 
+    # The input xml file which contain the data to be analyzed
+    self.xml_file = ''
+
 
 @anyfig.config_class
 class DevConfig(UserConfig):
@@ -31,9 +34,6 @@ class DevConfig(UserConfig):
     # The credentials file to google cloud
     self.google_key = '.google_key.json'
     google_utils.register_credentials(self.google_bucket_name, self.google_key)
-
-    # The input xml file which contain the data to be analyzed
-    self.xml_file = ''
 
     # How sensitively to listen for the command words
     self.commandword_bias = 40
@@ -59,7 +59,7 @@ class DevConfig(UserConfig):
 class DebugConfig(DevConfig):
   def __init__(self):
     super().__init__()
-    self.xml_file = 'input_xml/sofa_event.fcpxml'  # TODO: Doesn't work with abs path & docker
+    self.xml_file = 'input_xml/sofa_event.fcpxml'
     self.send_to_finalcut = False
     self.fake_data = True
     self.clear_outdir = True

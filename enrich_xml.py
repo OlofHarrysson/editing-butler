@@ -15,7 +15,12 @@ def main():
   joke = meta_utils.get_joke()
   print(f'Here is a programming joke while you wait ;)\n\n{joke}\n')
 
-  config = anyfig.setup_config(default_config='DebugConfig')
+  # config = anyfig.setup_config(default_config='DebugConfig')
+  config = anyfig.setup_config(default_config='DevConfig')
+
+  err_msg = "You have to specify an input file in the config.py file or send it as an input parameter to the program as such --xml_file=path/to/file.fcpxml"
+  assert config.xml_file != '', err_msg
+
   if config.clear_outdir:
     meta_utils.clear_outdir()
 
@@ -51,7 +56,6 @@ def main():
 
 
 def get_asset_files(path):
-  assert path.suffix == '.fcpxml', 'You need to input a final cut pro xml file. They typically end with .fcpxml'
   tree, root = xml_utils.read_xml(path)
   asset_xmls = root.findall('resources/asset')
   return [a.attrib for a in asset_xmls]

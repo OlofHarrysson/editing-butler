@@ -25,7 +25,7 @@ class SpeechRecognizer():
       raw_words = self.transcribe_audio(audio)
       transcriber = Transcriber(raw_words)
 
-    transcriber.print_text()
+    print(f"\nButler heard: {transcriber.transcription}\n\n")
     words = transcriber.format_transcription(self.commands)
 
     index2word = {i: w for i, w in enumerate(words)}

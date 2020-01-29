@@ -22,7 +22,7 @@ class GoogleSpeechRecognition(SpeechRecognizer):
     config = types.RecognitionConfig(
       encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
       language_code='en-US',
-      audio_channel_count=2,
+      audio_channel_count=1,
       enable_word_time_offsets=True,
       model='video',
       speech_contexts=[dict(phrases=phrases, boost=self.commandword_bias)])

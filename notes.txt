@@ -2,7 +2,8 @@ TODO
 handle sound files and not just video files.
 Have some sort of prettyprint for a transcription. It can start the line with hour:minute:seconds- the words that come for that e.g. 10 seconds. Then new line with next words.
 
-Build in test-example
+Number of channels from ffprobe
+missing value printout when running from docker
 
 
 
