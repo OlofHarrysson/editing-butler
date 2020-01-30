@@ -13,6 +13,13 @@ def stream_duration(path):
   return float(str_time)
 
 
+def n_audio_channels(path):
+  ''' Returns the number of channels for an audio file '''
+  assert Path(path).exists(), f"Media file '{path}' doesn't exist"
+  probe = ffmpeg.probe(path)
+  return probe['streams'][0]['channels']
+
+
 def assert_installed():
   err_msg = f"Couldn't run ffmpeg. Make sure that it's installed correctly, see '{meta_utils.install_url()}'"
   try:

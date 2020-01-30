@@ -17,18 +17,18 @@ class GoogleSpeechRecognition(SpeechRecognizer):
     super().__init__(commandword_bias)
     self.client = speech.SpeechClient()
 
-  def transcribe_audio(self, audio):
+  def transcribe_audio(self, audio_blob):
     phrases = [c.command_variant for c in self.commands]
     config = types.RecognitionConfig(
       encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
       language_code='en-US',
-      audio_channel_count=1,
+      audio_channel_count=audio_blob.pop('n_channels'),
       enable_word_time_offsets=True,
       model='video',
       speech_contexts=[dict(phrases=phrases, boost=self.commandword_bias)])
 
     try:
-      operation = self.client.long_running_recognize(config, audio)
+      operation = self.client.long_running_recognize(config, audio_blob)
     except ResourceExhausted:
       err_msg = f"The project has run out of it's quota for today. Try again tomorrow or set up your own Google Cloud project, see '{meta_utils.install_url()}'"
       print(err_msg)
@@ -51,9 +51,13 @@ class GoogleSpeechRecognition(SpeechRecognizer):
     tmp_audio_file = f'/tmp/{unique_cloud_id}_{path.stem}.wav'
     cloud_path = Path(tmp_audio_file)
 
-    # Convert file to audio
-    ffmpeg.input(path).output(tmp_audio_file).overwrite_output().run(
-      quiet=True)
+    try:
+      # Convert file to audio
+      ffmpeg.input(path).output(tmp_audio_file).overwrite_output().run(
+        quiet=True)
+    except Exception as e:
+      err_msg = f"Could't convert '{path}' into an audio file"
+      raise RuntimeError(err_msg) from e
 
     # Limits video length for price reasons
     n_allowed_minutes = 15
@@ -68,6 +72,8 @@ class GoogleSpeechRecognition(SpeechRecognizer):
       google_utils.upload_blob(google_bucket_name, tmp_audio_file,
                                cloud_path.name)
 
+    # Create prepared audio
     uri_path = f'gs://{google_bucket_name}/' + cloud_path.name
-    audio = {"uri": uri_path}
+    n_channels = ffmpeg_utils.n_audio_channels(tmp_audio_file)
+    audio = {"uri": uri_path, 'n_channels': n_channels}
     return audio, cloud_path.name
