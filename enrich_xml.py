@@ -15,8 +15,8 @@ def main():
   joke = meta_utils.get_joke()
   print(f'Here is a programming joke while you wait ;)\n\n{joke}\n')
 
-  # config = anyfig.setup_config(default_config='DebugConfig')
-  config = anyfig.setup_config(default_config='DevConfig')
+  config = anyfig.setup_config(default_config='DebugConfig')
+  # config = anyfig.setup_config(default_config='DevConfig')
 
   err_msg = "You have to specify an input file in the config.py file or send it as an input parameter to the program as such --xml_file=path/to/file.fcpxml"
   assert config.xml_file != '', err_msg

@@ -42,7 +42,8 @@ def main():
 def send_xml_to_finalcut(xml_path):
   assert os.path.exists(xml_path), "XML file '%s' didn't exist" % xml_path
   args = ['osascript', 'src/finalcut/send_xml_to_finalcut.scpt', xml_path]
-  subprocess.call(args)
+  FNULL = open(os.devnull, 'w')
+  subprocess.call(args, stdout=FNULL, stderr=subprocess.STDOUT)
 
 
 if __name__ == '__main__':

@@ -60,7 +60,7 @@ class DebugConfig(DevConfig):
   def __init__(self):
     super().__init__()
     self.xml_file = 'input_xml/sofa_event.fcpxml'
-    self.send_to_finalcut = False
+    self.send_to_finalcut = True
     self.fake_data = True
     self.clear_outdir = True
     self.unique_cloud_file_id = ''

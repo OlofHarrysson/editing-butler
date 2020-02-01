@@ -2,11 +2,14 @@ TODO
 handle sound files and not just video files.
 Have some sort of prettyprint for a transcription. It can start the line with hour:minute:seconds- the words that come for that e.g. 10 seconds. Then new line with next words.
 
-Number of channels from ffprobe
-missing value printout when running from docker
-
-
-
+A strategy to release patches.
+- Keep master stable and do development on develop
+- Some kind of update script
+  - Move changed files into directory that is timestamped
+  - git fetch --all; git reset --hard origin/master
+Should I ever run from docker hub?
+change install --test to proper test
+Send to final cut pro - prompt on dont know.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Webpage
