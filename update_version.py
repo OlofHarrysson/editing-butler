@@ -13,7 +13,7 @@ def main():
 
   # Build docker image
   command = 'python setup/build_docker.py'
-  subprocess.call(docker_args.split())
+  subprocess.call(command.split())
 
 
 if __name__ == '__main__':
