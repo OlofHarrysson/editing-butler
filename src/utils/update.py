@@ -31,7 +31,7 @@ def update_version():
     remote.fetch()
 
   repo.git.reset('--hard', 'origin/master')
-  print('\nUpdating finished!\n\n')
+  print('\nGit repo updated\n\n')
 
 
 if __name__ == '__main__':
