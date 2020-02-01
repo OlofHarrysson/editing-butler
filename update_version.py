@@ -1,5 +1,6 @@
-import subprocess
 import os
+import sys
+import subprocess
 
 
 def main():
@@ -9,7 +10,12 @@ def main():
   command = 'python src/utils/update.py'
   docker_args = "docker run -it --rm --name butler -v %s:/home/butler butler %s" % (
     project_root, command)
-  subprocess.call(docker_args.split())
+  completed = subprocess.call(docker_args.split())
+  if completed:
+    print(
+      "Couldn't update the git repo. Try re-installing the program instead. This update script doesn't work for ssh-cloned repos, use https"
+    )
+    sys.exit(1)
 
   # Build docker image
   command = 'python setup/build_docker.py'
