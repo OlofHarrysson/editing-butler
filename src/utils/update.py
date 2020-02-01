@@ -25,13 +25,13 @@ def update_version():
       assert src_path.exists()
       shutil.copy(src_path, out_path)
 
-    # Update repo
-    print('\nUpdating program...\n\n')
-    for remote in repo.remotes:
-      remote.fetch()
+  # Update repo
+  print('\nUpdating program...\n\n')
+  for remote in repo.remotes:
+    remote.fetch()
 
-    repo.git.reset('--hard', 'origin/master')
-    print('\nUpdating finished!\n\n')
+  repo.git.reset('--hard', 'origin/master')
+  print('\nUpdating finished!\n\n')
 
 
 if __name__ == '__main__':
