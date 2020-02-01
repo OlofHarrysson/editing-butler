@@ -14,8 +14,8 @@ def main():
   # Build docker image
   command = 'python setup/build_docker.py'
   subprocess.call(command.split())
-  print('\nDocker image rebuilt\n\n')
-  print('\nUpdate finished!\n\n')
+  print('\nDocker image rebuilt')
+  print('Update finished!')
 
 
 if __name__ == '__main__':
