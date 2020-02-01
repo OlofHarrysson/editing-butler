@@ -17,6 +17,7 @@ def update_version():
     date_time = datetime.now().strftime("%Y%d%m-%H%M%S")
     save_dir = project_dir / 'saved_updatefiles' / f'date-{date_time}'
     save_dir.mkdir(parents=True)
+    print(f"Saving changed files in '{save_dir}'")
     for f in changed_files:
       src_path = project_dir / f
       out_path = save_dir / f
@@ -25,8 +26,11 @@ def update_version():
       shutil.copy(src_path, out_path)
 
     # Update repo
+    print('\nUpdating program...\n\n')
     for remote in repo.remotes:
       remote.fetch()
+
+    repo.git.reset('--hard', 'origin/master')
 
 
 if __name__ == '__main__':
