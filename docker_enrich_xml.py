@@ -21,20 +21,25 @@ def main():
   xml_file = args.xml_file
   assert os.path.exists(xml_file), "XML file '%s' didn't exist" % xml_file
 
-  command = '/bin/bash'
-  host = '/host_root'
+  # Raw args to send to main program
   raw_args = ' '.join(sys.argv[1:])
-  command = 'python enrich_xml.py --path_base=%s %s' % (host, raw_args)
+
+  # xml-files are built on native OS file system so give access to this in docker
+  host = '/host_root'
+
+  # The command to run docker with
+  command = 'python enrich_xml.py --using_docker=True %s' % raw_args
 
   project_root = os.path.abspath(os.path.dirname(__file__))
-  docker_args = "docker run -it --rm --name butler -v /:%s:ro -v %s:/home/butler butler %s" % (
-    host, project_root, command)
+  workdir = '/home/butler/editing-butler'
+  docker_args = "docker run -it --rm --name butler -w %s -v /:%s:ro -v %s:%s butler %s" % (
+    workdir, host, project_root, workdir, command)
 
   exit_code = subprocess.call(docker_args.split())
 
   # Exit code 42 means that we want to send xml to Final Cut
   if exit_code == 42:
-    xml_filename = os.path.basename(xml_file)
+    xml_filename = 'enriched_' + os.path.basename(xml_file)
     xml_outpath = os.path.join('output', xml_filename)
     send_xml_to_finalcut(os.path.abspath(xml_outpath))
 

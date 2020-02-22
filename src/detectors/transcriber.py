@@ -16,6 +16,8 @@ class Transcriber():
   def format_transcription(self, commands):
     placeholder = '!placeholder!'
     text = ' '.join([w.text for w in self.words])
+    text = text.lower()
+
     for command, command_alternative in commands:
       n_words_command = len(command_alternative.split())
       placeh = " ".join([placeholder for _ in range(n_words_command - 1)])

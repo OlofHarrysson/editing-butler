@@ -2,7 +2,7 @@ import sys
 import anyfig
 from pathlib import Path
 
-import config as _
+import settings as _
 from src.finalcut import edit_xml
 from src.utils import google_utils
 from src.utils import xml_utils
@@ -13,7 +13,7 @@ from src.utils import ffmpeg_utils
 def main():
   ffmpeg_utils.assert_installed()
   joke = meta_utils.get_joke()
-  print(f'Here is a programming joke while you wait ;)\n\n{joke}\n')
+  print(f'A programming joke while you wait ;)\n\n{joke}\n')
 
   # config = anyfig.setup_config(default_config='DebugConfig')
   config = anyfig.setup_config(default_config='DevConfig')
@@ -24,15 +24,20 @@ def main():
   if config.clear_outdir:
     meta_utils.clear_outdir()
 
+  # If we're running from docker, some paths needs handling
+  if config.using_docker and not config.test_install:
+    path_base = '/host_root'
+  else:
+    path_base = ''
+
   xml_path = Path(config.xml_file)
   if xml_path.is_absolute():
-    xml_path = Path(config.path_base) / str(xml_path)[1:]
+    xml_path = Path(path_base) / str(xml_path)[1:]
 
   recognizer = config.recognizer
-
   analyzed_metadatum = []
   for asset in get_asset_files(xml_path):
-    asset_path = Path(config.path_base) / asset['src']
+    asset_path = Path(path_base) / asset['src']
 
     # Upload data to cloud
     data, cloud_file_name = recognizer.prepare_data(
@@ -46,10 +51,14 @@ def main():
       google_utils.delete_blob(config.google_bucket_name, cloud_file_name)
     analyzed_metadatum.append(dict(id=asset['id'], actions=actions))
 
-  edit_xml.main(xml_path, analyzed_metadatum)
+  # Edit & save xml
+  xml_tree = edit_xml.main(xml_path, analyzed_metadatum)
+  output_dir = meta_utils.get_project_root() / 'output'
+  xml_outpath = output_dir / f'enriched_{xml_path.name}'
+  xml_utils.save_xml(xml_tree, str(xml_outpath))
 
-  if config.send_to_finalcut and config.path_base == '':
-    xml_outpath = Path('output') / xml_path.name
+  # Send xml to final cut
+  if config.send_to_finalcut and not config.using_docker:
     meta_utils.send_xml_to_finalcut(xml_outpath)
   elif config.send_to_finalcut:
     sys.exit(42)

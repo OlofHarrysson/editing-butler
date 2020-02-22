@@ -52,7 +52,10 @@ class DevConfig(UserConfig):
     self.unique_cloud_file_id = datetime.now().strftime("%Y-%m-%d-%H%M%S")
 
     # When script is ran from docker and volume is mounted in this can help to map xml_paths to the mounted volume
-    self.path_base = ''
+    self.using_docker = False
+
+    # Tests butler on dummy data. Only applicable when running from docker
+    self.test_install = False
 
 
 @anyfig.config_class
@@ -60,7 +63,7 @@ class DebugConfig(DevConfig):
   def __init__(self):
     super().__init__()
     self.xml_file = 'input_xml/sofa_event.fcpxml'
-    self.send_to_finalcut = True
+    self.send_to_finalcut = False
     self.fake_data = True
     self.clear_outdir = True
     self.unique_cloud_file_id = ''

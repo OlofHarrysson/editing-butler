@@ -6,7 +6,7 @@ def get_fake_words():
 
   words = [
     Word(text='hello', start_time=1.0, end_time=1.3),
-    Word(text='this', start_time=1.3, end_time=1.6),
+    Word(text='This', start_time=1.3, end_time=1.6),
     Word(text='is', start_time=1.6, end_time=1.7),
     Word(text='the', start_time=1.7, end_time=1.8),
     Word(text='second', start_time=1.8, end_time=2.1),

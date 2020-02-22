@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "editing-butler",
+  "private_key_id": "e3bafb59402807accc231673112f7a801526f6df",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCTLvdyo2DJ/+oN\ng4i/L3bKxhol4sWwcS+ic7L7QLvHkYJ2zCSJKnAizj4IebOQDu9OkWq0WAt7VBIy\nJg/hyeRoTfdUX3N8naEJqgJaGVTT2eTOTzd7J18jUK7jxwpGXlbSjycYY8pq60B1\n/qBJxeTyoOdprFZH+SVQBWD/D01Lfbmn/jA9UTkzRSYhCGakS26EN2NMraeM3sNB\nvtkk6DnQVZKFbUkqYFVOaKp86THDkaTAFjqSNl8fAL2RfmziHd/IOURk4dZ+uADT\nhwqeZ2Q88DpDVW1ypzXn7KrrStd8dID5wlZZ4zAypfo4X6Zg7P2EBntrKuW1GJz8\nYWOgJJ9JAgMBAAECggEABFHfEl7IMvWPZYkkRNQ8TNRGpTEEM1sHFmIF8UjjmgZj\nyV/RfLMhqmvaNz53LjW6AVjURGnHIH4FsLIcSji2Ovd62F+a0KABv3pdak6PBk7B\nX+rESpmLucoe7/GCFDGlo7Vu5NDc+olgEXaBNtkXkKV3VUspFyCxXylhQOsujhYd\nqOu8ph2giWoGT4uTt3DVA9Ue55Ej37vSapQcer17oolBcUNaH4xFTb2XrRa3IUqW\nO6kSOEKNh/T1vAzTXpDudmngPYsN5beebW47EfquqPiCIU+2tUpKwAbvTymdy58O\nFzm1IrbGgjjOjkgt0YFAKxHApcygb6pOAZGLTE9kuQKBgQDNI6UvJYI4teCgsRwX\n3O3wlpHWu4BRtXvUp/OLh8/JoC0ABRV7piA/k4bRibxOc11Nrqk8+98qGpgLoMGU\nDMKupU41Xn2VZepOmXUAvGcV17jpClN3T22kHgGPxydcsdnrNunC53P01v0T3dYP\nr+9O1YdvHG1YyHGFwAHOyPOZfQKBgQC3rNIskRWFCu0s7C2e1JnrxdWhPNuxKIu0\nUfzwNCiPEAgZ2iPYk5HjjaUrTxbECTz83b79iw7mbQT8EhGi8jJlVB3g/IDxePWa\nqcdw7wKu7q0n2v/2Zzv1solOXj4ad/lzUeD6q1e2M32sx7UHhx/uH5FArAAhjENR\nA5p95t7mvQKBgQCV9ub9DmiiWKO8FX26HDJ93TUES9JE6W17SsSKTmCiv0vmZdEM\nsaeFkq3OZOiaWU/uSC9Ee8TrHMHmTkD1oFZ6IjKIZWldXEHr79dPEGwz1Z5CDuBx\nqkk23xC5MRgfdY0fnOdLKrTkWn5slZG1qiJB+Wum2Js/elkzM+ieaN1caQKBgC+F\naytUrjipxwtkX7lEUD6MBOWelUiUsPCKdeK/2+6Hu1DU+4lBRPGW6DD4WW+G5FyY\nEp4OqGA9vJhrJF0ARMGqrcBUFBhlr0XAv3UcoZkY73vsUWUy+HRtKNE52N+IQuXv\nPUIdqqfdUpqtYMz9zOkTCcWtuqrzW0dOo14HqYwRAoGAPqYpj+QSWM/IyQUm38dy\nhfZZ8mSu1w+Zg3EwWzKKPX7siXlJBnUUxsKUvb43ZR8diztdP69KFz2gfOUMpoJs\nzeaqMTp7nEoYAItcv0zi/Uvzomm8qODB2gssM+ijUS9CNpnbtY9K46+mF+Qpo6Uw\nUobCfUtyQ3MuAVYS4AyVIic=\n-----END PRIVATE KEY-----\n",
+  "client_email": "end-user@editing-butler.iam.gserviceaccount.com",
+  "client_id": "106263136661238424859",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/end-user%40editing-butler.iam.gserviceaccount.com"
+}

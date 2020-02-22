@@ -17,6 +17,9 @@ class SpeechRecognizer():
     self.commands.append(command_format(SpeechCmd.placemarker, 'add markers'))
     self.commands.append(command_format(SpeechCmd.placemarker, 'add marker'))
 
+  def transcribe_audio(audio):
+    raise NotImplementedError
+
   def find_actions(self, audio, fake_data):
     if fake_data:
       transcriber = Transcriber([])

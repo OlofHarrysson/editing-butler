@@ -1,12 +1,9 @@
 TODO
+Test-xml has path to olof/path/to which doesn't work for other users
 handle sound files and not just video files.
 Have some sort of prettyprint for a transcription. It can start the line with hour:minute:seconds- the words that come for that e.g. 10 seconds. Then new line with next words.
+include google key in git
 
-A strategy to release patches.
-- Keep master stable and do development on develop
-- Some kind of update script
-  - Move changed files into directory that is timestamped
-  - git fetch --all; git reset --hard origin/master
 Should I ever run from docker hub?
 change install --test to proper test
 Send to final cut pro - prompt on dont know.
@@ -24,6 +21,70 @@ Create youtube video.
   - Create transcript
 - Screen record workflow
 - Edit video together
+
+*start camera*
+butler start clip
+*enter pudgey*
+butler stop clip
+
+Hi there,
+Today i'll show you how to use Butler. For those of you watching this video but aren't familiar with Butler, have a look at the link in the description for more information.
+
+so
+
+Butler helps to organize your videos through voice commands. These are the supported voice commands today
+*show commands in edit*
+Lets try adding a marker.
+
+Butler add marker hungry
+
+As you can see, using Butler is pretty simple. You don't need any tools apart from your normal recording equipment because the voice analyzis is performed at a later stage in the computer.
+
+This unfortunately means that you won't get any confirmation that you were understood so it's important to pronounce the butler commands clearly.
+
+The next feature I want to show you is the ability to create a virtual clip inside the video with the start and stop commands.
+
+To start the virtual recording you simply say
+butler start clip
+
+In here
+You can still add markers
+Butler add marker virtual
+
+And when we want to stop the clip
+
+Butler stop clip.
+
+
+That's all there's to it! The next step is to analyze the video. CyA!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+create new event
+import videos
+export xml
+run butler on it
+have it auto import
+also do manual import
+show the markers on the timeline
+point out the keywords on the timeline
+go into marker smart collections. search
+go into keyword
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+show requirements
+show docker website
+open terminal
+
+drag folder to where we want to install
+clone git
+build docker
+
+
+
+
+
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create forum post
@@ -47,6 +108,9 @@ Debug commands - https://speechlogger.appspot.com/
 Long term
 - Workflow Extension - plugin for final cut. Seems like you have to collaborate with apple? Mac OS desktop client could allow for drag and drop workflow at least.
 - Add full transcriptions?
+  - Highlight conversation - but not do the transcripts
+- Create new events + asset clips. One for commands, one for speech one for etc. Would avoid polluting the original and clutter
+- release patches, keep master stable and do development on develop
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
