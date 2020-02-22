@@ -39,7 +39,6 @@ def main():
 
   # Exit code 42 means that we want to send xml to Final Cut
   if exit_code == 42:
-    os.mkdir('%s/%s', (project_root, 'output'))
     xml_filename = 'enriched_' + os.path.basename(xml_file)
     xml_outpath = os.path.join('output', xml_filename)
     send_xml_to_finalcut(os.path.abspath(xml_outpath))
