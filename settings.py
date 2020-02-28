@@ -14,7 +14,7 @@ class UserConfig():
     # E.g replace True -> False or 40 -> 60
 
     # Sends the enriched xml to Final Cut automatically
-    self.send_to_finalcut = True
+    self.send_to_finalcut = False
 
     # Deletes the sound file from google storage after its use
     self.delete_cloud_file = True
