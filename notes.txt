@@ -1,19 +1,13 @@
 TODO
-Test-xml has path to olof/path/to which doesn't work for other users
-handle sound files and not just video files.
 Have some sort of prettyprint for a transcription. It can start the line with hour:minute:seconds- the words that come for that e.g. 10 seconds. Then new line with next words.
-include google key in git
 
-Should I ever run from docker hub?
-change install --test to proper test
-Send to final cut pro - prompt on dont know.
+Add contacts page
+Add links
+Fix gogole cloud
+Analytics
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Webpage
-Features:
-- Install guide with videos/gifs
-  - Images to right. Can I skip the layout? Set up reusable code blocks
-  - Create changed theme to load? 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create youtube video.
@@ -79,12 +73,6 @@ open terminal
 drag folder to where we want to install
 clone git
 build docker
-
-
-
-
-
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create forum post

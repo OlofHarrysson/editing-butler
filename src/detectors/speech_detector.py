@@ -1,11 +1,12 @@
 from collections import namedtuple, defaultdict
+from abc import ABC
 
 from src.fake_data import get_fake_words
 from src.commands import SpeechCommands as SpeechCmd
 from .transcriber import Transcriber
 
 
-class SpeechRecognizer():
+class SpeechRecognizer(ABC):
   def __init__(self, commandword_bias):
     self.commandword_bias = commandword_bias
     command_format = namedtuple('Command', 'command command_variant')
@@ -18,6 +19,7 @@ class SpeechRecognizer():
     self.commands.append(command_format(SpeechCmd.placemarker, 'add marker'))
 
   def transcribe_audio(audio):
+    ''' Implemented in subclass '''
     raise NotImplementedError
 
   def find_actions(self, audio, fake_data):

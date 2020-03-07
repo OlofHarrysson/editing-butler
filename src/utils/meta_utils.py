@@ -27,4 +27,4 @@ def get_joke():
 
 
 def install_url():
-  return 'http://167.172.151.158/markdown/installation'
+  return 'https://www.editingbutler.com/en/markdown/installation'

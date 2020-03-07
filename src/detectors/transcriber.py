@@ -1,5 +1,5 @@
 from collections import namedtuple
-from src.commands import SpeechCommands  # Needed for the eval
+from src.commands import SpeechCommands  # Needed for the eval below
 
 
 class Transcriber():

@@ -28,11 +28,10 @@ def main(xml_path, analyzed_metadatum):
 
 
 def create_smart_collection():
-  # TODO: What happens here?
   attrs = dict(rule='includes', value='butler')
   m1 = xml_utils.create_element('match-text', attrs)
 
-  attrs = dict(enabled='0', rule='includes', value='marker')
+  attrs = dict(rule='includes', value='marker')
   m2 = xml_utils.create_element('match-text', attrs)
 
   attrs = dict(name='butler markers', match='all')
@@ -46,7 +45,7 @@ def get_markers(markers):
   for marker in markers:
     time, tag = marker['time'], marker['name']
 
-    attrs = dict(start=f'{time}s', duration='1s', value=f'butler {tag}')
+    attrs = dict(start=f'{time}s', duration='1s', value=f'butler marker {tag}')
     xml_markers.append(xml_utils.create_element('marker', attrs))
 
   return xml_markers
